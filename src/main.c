@@ -2,14 +2,12 @@
     Main file
 */
 
-#include "unistd.h"
-#include "string.h"
+#include "../include/malloc_lib.h"
 
 void *malloc(size_t size)
 {
-    char *str = "this is in developement\n";
-    (void) size;
+    block_t **block = get_block();
 
-    write(1, str, strlen(str));
-    return (0);
+    init_block(block);
+    return (NULL);
 }
