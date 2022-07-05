@@ -6,8 +6,12 @@
 
 void *malloc(size_t size)
 {
-    block_t **block = get_block();
+    block_t *block = get_block();
+    check_space(block, size);
 
-    init_block(block);
+    my_putnbr(block->sizeleft);
+
+    (void) size;
+
     return (NULL);
 }
